@@ -24,6 +24,6 @@ func UnsentInvalidLimits(dbfile string, debug bool) (err error) {
 		return err
 	}
 
-	fmt.Printf("Deleted %d unsert orders\n", numDeleted)
+	fmt.Printf("Deleted %d unsent orders\n", numDeleted)
 	return nil
 }
