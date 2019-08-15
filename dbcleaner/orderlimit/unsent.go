@@ -2,7 +2,6 @@ package orderlimit
 
 import (
 	"context"
-	"fmt"
 
 	"github.com/bvinc/go-sqlite-lite/sqlite3"
 	"github.com/gogo/protobuf/proto"
@@ -79,8 +78,6 @@ func RemoveUnsentOrdersWithInvalidLimit(ctx context.Context, conn *sqlite3.Conn)
 
 			if err := validateSerializedOrderLimit(sOrderLimit); err == nil {
 				continue
-			} else {
-				fmt.Printf("%+v\n", err)
 			}
 
 			if err = delStmt.Exec(satID, serialNum); err != nil {
